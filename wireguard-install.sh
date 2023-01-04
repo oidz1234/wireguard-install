@@ -42,9 +42,12 @@ function checkOS() {
 			fi
 			OS=debian # overwrite if raspbian
 		fi
-	elif [[ -e /etc/almalinux-release ]]; then
+	elif [[ -e /etc/rocky-release ]]; then
 		source /etc/os-release
 		OS=almalinux
+	elif [[ -e /etc/almalinux-release ]]; then
+		source /etc/os-release
+		os=almalinux
 	elif [[ -e /etc/fedora-release ]]; then
 		source /etc/os-release
 		OS="${ID}"
